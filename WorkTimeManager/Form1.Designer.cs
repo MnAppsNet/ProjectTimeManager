@@ -48,6 +48,7 @@ namespace WorkTimeManager
             this.contextMenuForIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSelectTime = new System.Windows.Forms.Button();
             this.contextMenuForIcon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,6 +146,7 @@ namespace WorkTimeManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.calendar.CalendarDimensions = new System.Drawing.Size(2, 1);
             this.calendar.Location = new System.Drawing.Point(8, 0);
+            this.calendar.MaxSelectionCount = 999999999;
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 8;
             this.calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateSelected);
@@ -232,11 +234,28 @@ namespace WorkTimeManager
             this.toolStripMenuItemExit.Size = new System.Drawing.Size(134, 34);
             this.toolStripMenuItemExit.Text = "Exit";
             // 
+            // buttonSelectTime
+            // 
+            this.buttonSelectTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSelectTime.BackColor = System.Drawing.Color.White;
+            this.buttonSelectTime.BackgroundImage = global::WorkTimeManager.Properties.Resources.time;
+            this.buttonSelectTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSelectTime.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonSelectTime.ForeColor = System.Drawing.Color.Green;
+            this.buttonSelectTime.Location = new System.Drawing.Point(326, 255);
+            this.buttonSelectTime.Name = "buttonSelectTime";
+            this.buttonSelectTime.Size = new System.Drawing.Size(43, 35);
+            this.buttonSelectTime.TabIndex = 13;
+            this.buttonSelectTime.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonSelectTime.UseVisualStyleBackColor = false;
+            this.buttonSelectTime.Click += new System.EventHandler(this.buttonSelectTime_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 501);
+            this.Controls.Add(this.buttonSelectTime);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonReallocate);
             this.Controls.Add(this.buttonRefresh);
@@ -280,6 +299,7 @@ namespace WorkTimeManager
         private System.Windows.Forms.ContextMenuStrip contextMenuForIcon;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExit;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemOpen;
+        private System.Windows.Forms.Button buttonSelectTime;
     }
 }
 

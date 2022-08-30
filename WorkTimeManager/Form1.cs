@@ -272,5 +272,16 @@ namespace WorkTimeManager
                 Show();
             }
         }
+
+        private void buttonSelectTime_Click(object sender, EventArgs e)
+        {
+            SelectTIme selectTime = new SelectTIme();
+            if (selectTime.ShowDialog() != DialogResult.OK) return;
+
+            calendar.SelectionStart = selectTime.dateFrom.Value;
+            calendar.SelectionEnd = selectTime.dateTo.Value;
+            calendar_DateSelected(null, new DateRangeEventArgs(selectTime.dateFrom.Value, selectTime.dateTo.Value));
+            updateProjectView();
+        }
     }
 }
